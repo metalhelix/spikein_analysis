@@ -32,10 +32,15 @@ ERCC92.1.ebwt
 ERCC92.2.ebwt
 ERCC92.3.ebwt
 ERCC92.4.ebwt
-ERCC92.bed
 ERCC92.fa
 ERCC92.fa.fai
 expected.txt
+</pre>
+
+expected.txt has the following format:
+
+<pre>
+Re-sort ID  ERCC ID subgroup  concentration in Mix 1 (atmol/ul) concentration in Mix 2 (atmol/ul) expected fold-change rati log2(fold-change) expected dCt
 </pre>
 
 run @./spikein_run.rb /path/to/fastq.gz/files@
