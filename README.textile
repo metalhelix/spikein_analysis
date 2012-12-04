@@ -1,0 +1,44 @@
+h2. Spikein Analysis Script
+
+A very basic script for analyzing ERCC controls in RNA-seq data
+
+h2. About
+
+Input: 
+
+* directory containing one or more fastq.gz files. 
+** Tested with concatentated Illumina HiSeq output
+* SampleSheet.csv which describes the samples found in fastq.gz files
+** Sorry this is a custom format from "Illuminati":https://github.com/vlandham/illuminati
+* ERCC bowtie indexes built under a subdirectory called 'data'
+* mix 1 and mix 2 expected values in a file called 'expected.txt' inside data
+
+Output:
+
+A sub-directory in the starting directory containing the following:
+
+* Alignments to the ERCC control sequences
+* Basic RPKM outputs for each sample
+* Graphs displaying dynamic range of samples compared to mix 1 and mix 2
+
+h2. To Use
+
+* git clone into directory of your choice
+* create 'data' subdirectory 
+* here are the needed files inside data:
+
+<pre>
+ERCC92.1.ebwt
+ERCC92.2.ebwt
+ERCC92.3.ebwt
+ERCC92.4.ebwt
+ERCC92.bed
+ERCC92.fa
+ERCC92.fa.fai
+expected.txt
+</pre>
+
+run @./spikein_run.rb /path/to/fastq.gz/files@
+
+Enjoy!
+
