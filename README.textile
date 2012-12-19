@@ -45,5 +45,33 @@ Re-sort ID  ERCC ID subgroup  concentration in Mix 1 (atmol/ul) concentration in
 
 run @./spikein_run.rb /path/to/fastq.gz/files@
 
+SampleReport.csv has the following fields:
+
+<pre>
+output,lane,sample name,illumina index,custom barcode,read,reference,total reads,pass filter reads,pass filter percent,align percent,type,read length
+</pre>
+
+Only @output@, @lane@, @sample name@, and @illumina index@ should be necessary.
+
+@output@ should be the name of the fastq file, @sample name@ along with @lane@ is used to name the spikein analysis output.
+
+Example:
+
+<pre>
+output,lane,sample name,illumina index,custom barcode,read,reference,total reads,pass filter reads,pass filter percent,align percent,type,read length
+test.fastq,1,Illumina_1ug_1,ACAGTG,,1,mm9,38088422,38088422,100.00,69.60,single,51
+</pre>
+
 Enjoy!
+
+h2. Dependencies
+
+Only tested on Mac 10.7 and Linux - CentOS6.
+
+* ruby 1.9
+* R
+* samtools
+* bowtie
+* zcat
+
 
