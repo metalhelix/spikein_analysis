@@ -1,0 +1,2 @@
+output,lane,sample name,illumina index,custom barcode,read,reference,total reads,pass filter reads,pass filter percent,align percent,type,read length
+test.fastq,1,Illumina_1ug_1,ACAGTG,,1,mm9,38088422,38088422,100.00,69.60,single,51 
