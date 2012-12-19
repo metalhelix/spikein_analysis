@@ -19,6 +19,9 @@ colnames(expected) <- c("row", "name", "subgroup", "mix_1", "mix_2", "expected_f
 
 spikes_merged <- merge(spikein_rpkms, expected, by.x = "name", by.y = "name", sort = F)
 
+filename <- paste(output_prefix, name, ".", "rpkms_with_mix", ".txt", sep = "")
+write.table(spikes_merged, file = filename, quote = FALSE, sep = "\t", row.names = FALSE)
+
 spikes_merged <- subset(spikes_merged, rpkm >= 5)
 spikes_merged$group <- factor(spikes_merged$subgroup)
 spikes_merged$color[spikes_merged$group == "A"] <- "red"
@@ -54,7 +57,7 @@ r2_text <- paste("R2 = ", fit_r_squared, sep = "")
 text(12, mean(log2(spikes_merged$rpkm)) - 0.8, labels = r2_text)
 dev.off()
 
-plot(log2(spikes_merged$mix_1), log2(spikes_merged$rpkm))
+#plot(log2(spikes_merged$mix_1), log2(spikes_merged$rpkm))
 
-plot(log2(spikes_merged$mix_2), log2(spikes_merged$rpkm))
+#plot(log2(spikes_merged$mix_2), log2(spikes_merged$rpkm))
 
